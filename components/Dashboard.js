@@ -17,7 +17,6 @@ const handlechange=(e)=>{
     setform({...form,[e.target.name]:e.target.value})
 }
 const handlesubmit=async (e)=>{
-  update()
   let a=await updateprofile(e,session.user.name)
   alert("Profile Updated")
 }
@@ -28,7 +27,7 @@ const getdata=async ()=>{
   return (
     <div className='container mx-auto py-5'>
         <h1 className='text-center my-5 text-3xl font-bold'>Welcome to your Dashboard</h1>
-        <form className='max-w-2xl mx-auto' onSubmit={handlesubmit}>
+        <form className='max-w-2xl mx-auto' action={handlesubmit}>
         <div className="my-2">
           <label htmlFor="name" className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>Name</label>
           <input type="text" value={form.name?form.name:""} onChange={handlechange} name='name' id='name' className='block w-full p-2 text-gray-900 border border-gray-300 rounded-lg
@@ -48,14 +47,14 @@ const getdata=async ()=>{
           dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'/>
         </div>
         <div className="my-2">
-          <label htmlFor="profile" className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>Profile</label>
-          <input type="text" value={form.profile?form.profile:""} onChange={handlechange} name='profile' id='profile' className='block w-full p-2 text-gray-900 border border-gray-300 rounded-lg
+          <label htmlFor="profilepic" className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>Profile</label>
+          <input type="text" value={form.profilepic?form.profilepic:""} onChange={handlechange} name='profilepic' id='profilepic' className='block w-full p-2 text-gray-900 border border-gray-300 rounded-lg
           bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
           dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'/>
         </div>
         <div className="my-2">
-          <label htmlFor="cover" className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>Cover Picture</label>
-          <input type="text" value={form.cover?form.cover:""} onChange={handlechange} name='cover' id='cover' className='block w-full p-2 text-gray-900 border border-gray-300 rounded-lg
+          <label htmlFor="coverpic" className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>Cover Picture</label>
+          <input type="text" value={form.coverpic?form.coverpic:""} onChange={handlechange} name='coverpic' id='coverpic' className='block w-full p-2 text-gray-900 border border-gray-300 rounded-lg
           bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
           dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'/>
         </div>

@@ -44,7 +44,7 @@ export const updateprofile=async (data,oldusername)=>{
     await connectDB()
     let ndata=Object.fromEntries(data) 
     if(oldusername!==ndata.username){
-        let u=await User.findOne({username:oldusername})
+        let u=await User.findOne({username:ndata.username})
         if(u){
             return {error:"Username already exists"}
         }

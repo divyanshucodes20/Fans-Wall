@@ -62,6 +62,7 @@ const paymentpage = ({username}) => {
                         {/*Show the list of  all supporters as a leaderboard*/}
                         <h2 className='my-5 text-2xl font-bold '>Supporters</h2>
                         <ul className='mx-5 text-lg '>
+                            {payments.length===0 && <li className='my-4'>No payments yet</li>}
                             {payments.map((p,i)=>{
                             return <li key={i} className='my-4 flex gap-2 items-center'>
                                 <img width={33} src="avatar.gif" alt="" />
